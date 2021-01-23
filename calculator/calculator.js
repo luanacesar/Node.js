@@ -5,7 +5,7 @@ const app = express();
 
 
 app.get("/", function(request, response){
-    response.send("<h1>Hello world!</h1>");
+ response.sendFile(__dirname + "/index.html");
 });
 
 app.listen(3000, function()
