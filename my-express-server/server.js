@@ -18,6 +18,10 @@ app.get("/location", function(request,response){
     response.send("<p>We are located in downtown of Toronto</p>")
 })
 
+app.get("/cv", function(request,response){
+    response.send("<p>I have a kitten</p>")
+})
+
 app.listen(3000, function(){
     console.log("Server started on port 3000");
 });
