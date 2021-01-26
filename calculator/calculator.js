@@ -27,17 +27,18 @@ app.post("/", function(req,resp){
 
 //BMI CALCULATOR
 
-app.get("/bmicalculator", function(requ,respo){
-    respo.sendFile(__dirname + "/bmicalculator.html");
+app.get("/bmicalculator", function(req,res){
+    res.sendFile(__dirname + "/bmiCalculator.html");
 });
 
-app.post("/bmicalculator", function(requ,respo){
-var weigth = requ.body.weigth;
-var heigth = requ.body.heigth;
+app.post("/bmiCalculator", function(req,res){
+var we = Number(req.body.we);
+var he = Number(req.body.he);
 
+// console.log(we);
 //calculate
-var total =  weigth + heigth;
-respo.send("Your BMI is" + total);
+var total =  we / (he * he);
+res.send("Your BMI is" + total);
 });
 
 app.listen(3000, function()
