@@ -12,5 +12,5 @@ app.get("/", function(req, res){
     res.send("server is up and running");
 })
 app.listen(3000, function(){
-    console.log("All good to go");
+    console.log("All good to go!!");
 });
