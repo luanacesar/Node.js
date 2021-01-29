@@ -11,17 +11,16 @@ app.get("/", function(req, res){
 
         response.on("data",function(data){
             const weatherData = JSON.parse(data)
-
             const temp = weatherData.main.temp
             const feels_like = weatherData.main.feels_like
-            const description = weatherData.weather[0].description
-            
-            console.log(temp); 
-            console.log(feels_like); 
-            console.log(description); 
+
+            // const description = weatherData.weather[0].description
+
+
+            res.send("<h1>The temperature in Toronto is: " + temp + " degrees Celcius")
         })
     })
-    res.send("server is up and running");
+    // res.send("server is up and running");
 })
 app.listen(3000, function(){
     console.log("good to go!!");
