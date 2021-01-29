@@ -13,11 +13,23 @@ app.get("/", function(req, res){
             const weatherData = JSON.parse(data)
             const temp = weatherData.main.temp
             const feels_like = weatherData.main.feels_like
+            const feels = "the weather is currently" + feels_like
+            const icon = weatherData.weather[0].icon
+            const imgWeather = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
+      
 
-            // const description = weatherData.weather[0].description
+            const description = weatherData.weather[0].description
 
+            res.write("<h1>The temperature in Toronto is: " + temp + " degrees Celcius </h1>")
+            res.write("<h5>The weather is currently " + description + "</h5>")
+            res.write("<img src =" + imgWeather + ">")
+            
 
-            res.send("<h1>The temperature in Toronto is: " + temp + " degrees Celcius")
+            // to send multiple html
+            res.send()
+            // just allows you to send one data
+            // res.send("<h1>The temperature in Toronto is: " + temp + " degrees Celcius </h1>")
+
         })
     })
     // res.send("server is up and running");
