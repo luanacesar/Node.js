@@ -39,5 +39,5 @@ app.use(bodyParser.urlencoded({extended:true}));
         });
     // res.send("server is up and running");
     app.listen(3000, function(){
-        console.log("good to go!!");
+        console.log("Great, all good to go!!");
     });
