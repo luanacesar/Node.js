@@ -15,7 +15,7 @@ app.get("/", function(req,res){
     res.sendFile(__dirname + "/signup.html");
 });
 
-app.post("/", function(respo,req){
+app.post("/", function(req, respo){
 var firstname = req.body.fname;
 var lastname = req.body.lname;
 var email = req.body.email;
@@ -27,3 +27,6 @@ console.log(firstname, lastname, email);
 app.listen(3000, function() {
     console.log("Server is running on port 3000")
 });
+
+//my API Key
+//90671bfbc44f40e979cac679e4f69b51-us7
